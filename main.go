@@ -23,7 +23,7 @@ const (
 
 func main() {
 	router := gin.Default()
-	router.POST("/wx", WXMsgReceive)
+	router.POST("/wx", WxTextMsgReply)
 	log.Fatalln(router.Run(":80"))
 }
 
