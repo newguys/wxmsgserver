@@ -104,7 +104,7 @@ func WxTextMsgReply(c *gin.Context) {
 		FromUserName: textMsg.ToUserName,
 		CreateTime:   time.Now().Unix(),
 		MsgType:      "text",
-		Content:      fmt.Sprintf("欢迎来到Evildoer的世界，现在时间：%s", time.Now().Format("2016-01-02 15:04:05")),
+		Content:      fmt.Sprintf("欢迎来到Evildoer的世界，现在时间：%s", time.Now().Format("2006-01-02 15:04:05")),
 	}
 	bs, err := xml.Marshal(&resp)
 	if err != nil {
