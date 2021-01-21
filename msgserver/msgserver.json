@@ -1,0 +1,29 @@
+{
+  "rabbitmq": {
+    "url": "amqp://admin:admin@localhost:5672/test",
+    "order_topic": "order",
+    "redpacket_topic": "redpack",
+    "award_topic": "award"
+  },
+  "wxcfg": {
+    "host": "https://api.weixin.qq.com/cgi-bin/",
+    "app_id": "wx8aa615f8c0728a31",
+    "app_secret": "76f18821982615844afd251c08ed74f1",
+    "grant_type": "client_credential"
+  },
+  "template": {
+    "order": {
+      "template_id": "wsJcR2WD7uLmqVpiX4eTDIptUz9zqlwFJ6C7Z5t_Tjg",
+      "template_name": "订单通知"
+    },
+    "redpacket": {
+      "template_id": "CPBrP6CmosZjb7eFg5A_sTmCi3_A5_LU03CxGADwYdw",
+      "template_name": "红包通知"
+    },
+    "award": {
+      "template_id": "SK6zZgdWxxqGHE92QRjhydclXfNr_htelQWQ908xfBc",
+      "template_name": "奖励通知"
+    }
+  },
+  "default_openid": "o9vB25iK4rMPSjBC9XRr3qHei8JE"
+}

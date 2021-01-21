@@ -1,6 +1,8 @@
 package main
 
-import "encoding/xml"
+import (
+	"encoding/xml"
+)
 
 const WXToken string = "Evildoer"
 
@@ -28,18 +30,6 @@ type AccessTokenResp struct {
 type MiniProgram struct {
 	AppID    string `json:"appid"`
 	PagePath string `json:"pagepath,omitempty"`
-}
-
-type Data struct {
-}
-
-//SendTemplateMsgReq
-type SendTemplateMsgReq struct {
-	Touser      string      `json:"touser"`
-	TemplateID  string      `json:"template_id"`
-	URL         string      `json:"url,omitempty"`
-	MiniProgram MiniProgram `json:"miniprogram,omitempty"`
-	Data        Data        `json:"data"`
 }
 
 type SendTemplateMsgResp struct {
@@ -98,4 +88,58 @@ type WxRepImageMsg struct {
 	CreateTime   int64    `xml:"CreateTime"`
 	MsgType      string   `xml:"MsgType"`
 	Content      string   `xml:"Content"`
+}
+type SubData struct {
+	Value string `json:"value"`
+	Color string `json:"color,omitempty"`
+}
+
+type Data struct {
+	First SubData `json:"first"`
+	Keyword1 SubData `json:"keyword1,omitempty"`
+	Keyword2 SubData `json:"keyword2,omitempty"`
+	Keyword3 SubData `json:"keyword3,omitempty"`
+	Keyword4 SubData `json:"keyword4,omitempty"`
+	Keyword5 SubData `json:"keyword5,omitempty"`
+	Keyword6 SubData `json:"keyword6,omitempty"`
+	Keyword7 SubData `json:"keyword7,omitempty"`
+	Keyword8 SubData `json:"keyword8,omitempty"`
+	Keyword9 SubData `json:"keyword9,omitempty"`
+	Remark SubData `json:"remark"`
+}
+
+//SendTemplateMsgReq
+type SendTemplateMsgReq struct {
+	Touser      string      `json:"touser"`
+	TemplateID  string      `json:"template_id"`
+	URL         string      `json:"url,omitempty"`
+	MiniProgram MiniProgram `json:"miniprogram,omitempty"`
+	Data        Data        `json:"data"`
+}
+
+type OrderNTSt struct {
+	OpenId string `json:"openId"`
+	OrderCode string `json:"orderCode"`
+	Price string `json:"price"`
+	StoreName string `json:"storeName"`
+	StoreId int64 `json:"storeId"`
+	ActivityId int64 `json:"activityId"`
+	ActivityName string `json:"activityName"`
+	CommodityName string `json:"commodityName"`
+}
+
+type RedPackNTSt struct {
+	OpenId string `json:"openId"`
+	StoreName string `json:"storeName"`
+	StoreId int64 `json:"storeId"`
+	Amount string `json:"amount"`
+}
+
+type AwardNTSt struct {
+	OpenId string `json:"openId"`
+	StoreName string `json:"storeName"`
+	StoreId int64 `json:"storeId"`
+	ActivityId int64 `json:"activityId"`
+	ActivityName string `json:"activityName"`
+	PrizeName string `json:"prizeName"`
 }
