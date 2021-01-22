@@ -120,7 +120,7 @@ func (baseHandler *BaseHandler) ConsumeOrderMqMsg(){
 }
 
 func (baseHandler *BaseHandler)ParseAndSendOrderTemplateMsg(d amqp.Delivery)  {
-	fmt.Printf("receive d:%s",d.Body)
+	fmt.Printf("receive d:%s\n",d.Body)
 	order := &OrderNTSt{}
 	err := json.Unmarshal(d.Body,order)
 	if err != nil {
@@ -432,8 +432,9 @@ func (baseHandler *BaseHandler)translateOrderMsgData(msg *OrderNTSt) (error,[]by
 	remark := "如有任何疑问欢迎再与客服联络"
 
 	templateMsg := SendTemplateMsgReq{
-		Touser: "OPENID",
+		Touser: msg.OpenId,
 		TemplateID: baseHandler.Config.Template.Order.TemplateId,
+
 	}
 	templateMsg.Data.First.Value = baseHandler.Config.Template.Order.TemplateName
 	templateMsg.Data.Keyword1.Value = keyword1
