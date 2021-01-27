@@ -1,2 +1,2 @@
 # wxmsgserver
-## 微信公众号自动回复
+## rabbitmq作为消息队列来进行模版消息发送
